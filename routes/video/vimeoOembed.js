@@ -8,7 +8,7 @@ router.param('id', async (req, res, next, id) => {
     if (!/^\d+$/.test(id)) throw BadRequest
 
     const options = { ...req.query }
-    req.video = await req.app.get('embetty').loadVimeoPrivateVideo(id, options)
+    req.video = await req.app.get('embetty').loadVimeoOembedVideo(id, options)
 
     next()
   } catch (e) {
